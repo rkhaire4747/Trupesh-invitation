@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Trupesh Weds Rashmi | Royal Wedding Invitation</title>
+  <meta name="description"
+    content="You are cordially invited to celebrate the royal wedding of Trupesh &amp; Rashmi on 25th &amp; 26th November 2026. Nandoliya Family Invites You.">
+  <meta name="theme-color" content="#1a0307">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trupesh Weds Rashmi | Royal Wedding Invitation">
+  <meta property="og:description"
+    content="|| શ્રી ગણેશાય નમઃ || Nandoliya Family cordially invites you to the wedding of Trupesh &amp; Rashmi on 25th &amp; 26th November 2026 in Mira Road.">
+  <meta property="og:image" content="./assets/images/12.webp">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./styles/main.css">
+
+  <!-- GSAP & Canvas Confetti CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <!-- Interaction Script -->
+  <script src="./scripts/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Ambient Body Layer & Texture -->
+  <div class="body-bg-layer" aria-hidden="true"></div>
+
+  <!-- Interactive Floating Mogra & Marigold Petals Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Wedding Shehnai & Flute Audio -->
+  <audio id="bg-music-audio" src="./assets/audio/wedding-shehnai.mp3" loop preload="auto"></audio>
+
+  <!-- ========================================================================
+       PRELOADER & INVITATION CURTAIN
+       ======================================================================== -->
+  <div id="preloader" role="dialog" aria-modal="true" aria-label="Wedding Invitation Envelope">
+    <div class="preloader-inner">
+      <div class="preloader-ganesha-ring">
+        <div class="preloader-halo"></div>
+        <img src="./assets/images/tjsmDC8g305SmMs98B3ABqR5QE.png" alt="Lord Ganesha" class="preloader-ganesha-img">
+      </div>
+      <div class="preloader-mantra">|| श्री गणेशाय नमः ||</div>
+      <h2 class="preloader-title">Trupesh &amp; Rashmi</h2>
+      <p class="preloader-sub">The Nandoliya Family Cordially Invites You</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <button id="btn-enter-invitation" class="btn-enter-invitation" type="button">
+        <span>Open Royal Invitation</span>
+        <span aria-hidden="true">💌</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOP FLOATING ACTION CONTROLS (Audio, Petals, Share)
+       ======================================================================== -->
+  <header class="top-action-bar">
+    <button id="music-toggle-btn" class="action-btn-pill" type="button" aria-label="Toggle background music">
+      <span class="music-wave-bars" aria-hidden="true">
+        <span class="music-wave-bar"></span>
+        <span class="music-wave-bar"></span>
+        <span class="music-wave-bar"></span>
+      </span>
+      <span class="music-toggle-label">Music</span>
+    </button>
+
+    <div class="top-action-group">
+      <button id="petals-toggle-btn" class="action-btn-pill active" type="button" aria-label="Toggle flower petals">
+        <span aria-hidden="true">🌸</span>
+        <span>Petals</span>
+      </button>
+      <button id="share-invite-btn" class="action-btn-pill" type="button" aria-label="Share wedding invitation">
+        <span aria-hidden="true">🔗</span>
+        <span>Share</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APPLICATION VIEWPORT
+       ======================================================================== -->
+  <main class="app-viewport">
+    <div class="invitation-container">
+
+      <!-- ====================================================================
+           1. HERO SECTION (Opening Experience)
+           ==================================================================== -->
+      <section id="hero" class="hero-section">
+        <!-- Top Ornate Toran -->
+        <div class="hero-toran-arch" aria-hidden="true"></div>
+
+        <!-- Corner Filigree Ornaments -->
+        <svg class="card-ornament-corner corner-tl" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5h35M5 5v35M12 12h20M12 12v20" stroke="var(--gold-foil)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="8" cy="8" r="3" fill="var(--gold-foil)"/>
+        </svg>
+        <svg class="card-ornament-corner corner-tr" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5h35M5 5v35M12 12h20M12 12v20" stroke="var(--gold-foil)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="8" cy="8" r="3" fill="var(--gold-foil)"/>
+        </svg>
+
+        <!-- Auspicious Deities from Invitation Card -->
+        <div class="auspicious-invocations">
+          <div class="auspicious-deities-row">
+            <span class="auspicious-deity">|| શ્રી સુરાપુરા દાદા ||</span>
+            <span class="auspicious-deity">|| શ્રી વિશ્વકર્મા દાદા ||</span>
+          </div>
+          <div class="auspicious-deities-row">
+            <span class="auspicious-deity" style="color:var(--gold-light); font-weight:700;">|| શ્રી ગણેશાય નમઃ ||</span>
+            <span class="auspicious-deity">|| શ્રી ખોડિયાર માતાજી ||</span>
+          </div>
+          <div class="auspicious-trinity">
+            <span>|| શુભ ||</span>
+            <span class="shubh-vivah">|| શુભવિવાહ ||</span>
+            <span>|| લાભ ||</span>
+          </div>
+        </div>
+
+        <!-- Centerpiece Monogram Crest & Ganesha -->
+        <div class="hero-centerpiece">
+          <div class="royal-crest-wrap">
+            <!-- <img src="./assets/images/22xXcSSm9sQYXLb74vUWOaNwXY.png" alt="Royal Mandala" class=""> -->
+            <div class="crest-ganesha-badge">
+              <img src="./assets/images/tjsmDC8g305SmMs98B3ABqR5QE.png" alt="Ganesha">
+            </div>
+          </div>
+
+          <!-- Monogram T & R -->
+          <div class="monogram-badge">
+            <span>T</span>
+            <span class="ampersand">&amp;</span>
+            <span>R</span>
+          </div>
+
+          <p class="hero-invitation-label">Wedding Invitation</p>
+        </div>
+
+        <!-- Grand Names Reveal -->
+        <div class="hero-names-block">
+          <h1 class="hero-groom-name">Trupesh</h1>
+          <div class="hero-weds-badge">
+            <span class="weds-line" aria-hidden="true"></span>
+            <span>weds</span>
+            <span class="weds-line right" aria-hidden="true"></span>
+          </div>
+          <h2 class="hero-bride-name">Rashmi</h2>
+
+          <div class="hero-family-invite-line">Nandoliya Family Invites You</div>
+          <div class="hero-family-invite-sub">To Celebrate The Auspicious Union</div>
+        </div>
+
+        <!-- Hero Bottom Callout with Date & Scroll Prompt -->
+        <div class="hero-bottom-callout">
+          <div class="hero-dates-pill">
+            <span class="date-num">25<sup style="font-size:0.6em;">th</sup> &amp; 26<sup style="font-size:0.6em;">th</sup></span>
+            <span class="date-dot">✦</span>
+            <span class="date-month">November 2026</span>
+          </div>
+
+          <a href="#story" class="scroll-indicator" aria-label="Scroll to wedding story">
+            <svg class="scroll-diya-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C12 2 8 7 8 11C8 13.2091 9.79086 15 12 15C14.2091 15 16 13.2091 16 11C16 7 12 2 12 2Z" fill="var(--gold-foil)"/>
+              <path d="M4 14C4 18 7.58172 21 12 21C16.4183 21 20 18 20 14H4Z" fill="var(--maroon)" stroke="var(--gold-light)" stroke-width="1.5"/>
+            </svg>
+            <span>Begin The Journey</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           2. INTRODUCTION / TWO FAMILIES SECTION
+           ==================================================================== -->
+      <section id="story" class="story-section">
+        <div class="section-tag">A Sacred Alliance</div>
+        <h2 class="section-heading-royal">Two Families,<br>One Beautiful Beginning</h2>
+        <p class="section-subtext">With the divine grace of Kuldevi Shri Khodiyar Mataji, two families unite in love, culture and heritage.</p>
+
+        <div class="ornament-divider">
+          <span class="divider-line"></span>
+          <span class="divider-motif">✦ ❈ ✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <!-- Auspicious Couple Introduction Frame -->
+        <div class="story-couple-showcase">
+          <div class="story-couple-frame">
+            <div class="story-couple-ring-halo" aria-hidden="true"></div>
+            <img src="./assets/images/1.webp" alt="Trupesh &amp; Rashmi" class="story-couple-img" loading="lazy">
+            <div class="story-couple-tag-badge">
+              <span class="mantra-mini">|| દંપતી દીર્ઘાયુર્ભવતુ ||</span>
+              <span class="names-mini">Trupesh &amp; Rashmi</span>
+            </div>
+          </div>
+          <div class="story-couple-quote-block">
+            <p class="story-couple-quote-gu">&ldquo;બે હૃદયનું મિલન, બે આત્માનો પવિત્ર સંગાથ&rdquo;</p>
+            <p class="story-couple-quote-en">Beginning the sacred journey of love, trust, and a lifetime of shared laughter.</p>
+          </div>
+        </div>
+
+        <!-- Parents & Origins Cards -->
+        <div class="couple-parents-grid">
+          <!-- Groom Family -->
+          <div class="parent-card">
+            <span class="parent-role-badge">The Groom</span>
+            <h3 class="parent-person-name">Trupesh</h3>
+            <p class="parent-details">
+              Beloved Son of<br>
+              <strong>Aso Divyaben &amp; Rajubhai Keshubhai Nandoliya</strong>
+            </p>
+            <div class="parent-hometown">📍 Hal Mira Road</div>
+          </div>
+
+          <!-- Bride Family -->
+          <div class="parent-card">
+            <span class="parent-role-badge">The Bride</span>
+            <h3 class="parent-person-name">Rashmi</h3>
+            <p class="parent-details">
+              Cherished Daughter of<br>
+              <strong>Aso Divyaben &amp; Dineshbhai Harishchandra Panchal</strong>
+            </p>
+            <div class="parent-hometown">📍 Maral Nivasi (Hal Mira Road)</div>
+          </div>
+        </div>
+
+        <!-- Sacred Hastha Melap Ritual Card -->
+        <div class="hastha-art-card">
+          <img src="./assets/images/2.webp" alt="Trupesh &amp; Rashmi holding hands - Sacred Union" class="hastha-art-img" loading="lazy">
+          <div class="hastha-art-overlay">
+            <div class="hastha-art-title">Hastha Melap &bull; The Sacred Knot</div>
+            <div class="hastha-art-sub">Two hands joined in trust, two souls united in lifelong devotion</div>
+          </div>
+        </div>
+
+        <div class="union-thread-wrap">
+          <div class="union-knot-icon">💍</div>
+          <div class="union-caption">Trupesh &times; Rashmi</div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           3. MOMENTS OF LOVE & TOGETHERNESS (Pre-Wedding Gallery)
+           ==================================================================== -->
+      <section id="gallery" class="gallery-section">
+        <div class="section-tag">✨ પ્રેમ ના રંગ &bull; Pre-Wedding Moments</div>
+        <h2 class="section-heading-royal">Glimpses of Togetherness</h2>
+        <p class="section-subtext">Candid laughter, gentle waves, and stolen moments — a glimpse into Trupesh &amp; Rashmi's beautiful journey of love.</p>
+
+        <div class="ornament-divider">
+          <span class="divider-line"></span>
+          <span class="divider-motif">✦ ❈ ✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Photo 1: Featured Grand Landscape (Forehead Kiss) -->
+          <div class="gallery-item gallery-item-wide" data-gallery-idx="0" data-img="./assets/images/12.webp" data-title="A Sacred Promise" data-title-gu="પ્રેમ અને વિશ્વાસ" data-quote="In your eyes, I found my peaceful home; in your heart, I found my forever.">
+            <div class="gallery-card-inner">
+              <div class="gallery-card-ornament ornament-tl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-tr" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-bl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-br" aria-hidden="true"></div>
+              
+              <div class="gallery-img-container">
+                <img src="./assets/images/12.webp" alt="Trupesh kissing Rashmi gently by the sea" class="gallery-img" loading="lazy">
+                <div class="gallery-shimmer-sweep" aria-hidden="true"></div>
+              </div>
+              
+              <div class="gallery-badge-featured">
+                <span>✦ Featured Moment ✦</span>
+              </div>
+              
+              <div class="gallery-overlay">
+                <div class="gallery-caption-content">
+                  <span class="gallery-tag-gu">પ્રેમ અને વિશ્વાસ</span>
+                  <h3 class="gallery-title-en">A Sacred Promise</h3>
+                  <p class="gallery-quote">&ldquo;In your eyes, I found my home; in your heart, I found my forever.&rdquo;</p>
+                  <button class="btn-gallery-zoom" type="button" aria-label="View photo in full screen">
+                    <span>View Photo</span> <span aria-hidden="true">🔍</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Joyful Lift in the Air -->
+          <div class="gallery-item" data-gallery-idx="1" data-img="./assets/images/7.webp" data-title="Swept Away in Joy" data-title-gu="ખુશીઓ ની ઉડાન" data-quote="Laughter that echoes across the shore, turning every single day into a celebration.">
+            <div class="gallery-card-inner">
+              <div class="gallery-card-ornament ornament-tl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-tr" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-bl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-br" aria-hidden="true"></div>
+              
+              <div class="gallery-img-container">
+                <img src="./assets/images/7.webp" alt="Trupesh playfully lifting Rashmi in his arms with joy" class="gallery-img" loading="lazy">
+                <div class="gallery-shimmer-sweep" aria-hidden="true"></div>
+              </div>
+              
+              <div class="gallery-overlay">
+                <div class="gallery-caption-content">
+                  <span class="gallery-tag-gu">ખુશીઓ ની ઉડાન</span>
+                  <h3 class="gallery-title-en">Swept Away in Joy</h3>
+                  <p class="gallery-quote">&ldquo;Laughter that echoes across the shore, turning every day into a festival.&rdquo;</p>
+                  <button class="btn-gallery-zoom" type="button" aria-label="View photo in full screen">
+                    <span>View Photo</span> <span aria-hidden="true">🔍</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 3: Warm Loving Embrace -->
+          <div class="gallery-item" data-gallery-idx="2" data-img="./assets/images/4.webp" data-title="In Your Warm Embrace" data-title-gu="તારા સાથ માં શાંતિ" data-quote="Two souls, one rhythm. In each other's embrace, the world fades into serenity.">
+            <div class="gallery-card-inner">
+              <div class="gallery-card-ornament ornament-tl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-tr" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-bl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-br" aria-hidden="true"></div>
+              
+              <div class="gallery-img-container">
+                <img src="./assets/images/4.webp" alt="Trupesh and Rashmi smiling warmly in loving embrace" class="gallery-img" loading="lazy">
+                <div class="gallery-shimmer-sweep" aria-hidden="true"></div>
+              </div>
+              
+              <div class="gallery-overlay">
+                <div class="gallery-caption-content">
+                  <span class="gallery-tag-gu">તારા સાથ માં શાંતિ</span>
+                  <h3 class="gallery-title-en">In Your Warm Embrace</h3>
+                  <p class="gallery-quote">&ldquo;Two souls, one rhythm. Wrapped in comfort and endless warmth.&rdquo;</p>
+                  <button class="btn-gallery-zoom" type="button" aria-label="View photo in full screen">
+                    <span>View Photo</span> <span aria-hidden="true">🔍</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 4: Sun, Waves & Laughter -->
+          <div class="gallery-item gallery-item-wide" data-gallery-idx="3" data-img="./assets/images/14.webp" data-title="Sun, Waves &amp; Smiles" data-title-gu="હાસ્ય ની લહેરો" data-quote="Sun-kissed smiles and playful ocean waves — making memories for all our tomorrows.">
+            <div class="gallery-card-inner">
+              <div class="gallery-card-ornament ornament-tl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-tr" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-bl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-br" aria-hidden="true"></div>
+              
+              <div class="gallery-img-container">
+                <img src="./assets/images/14.webp" alt="Trupesh and Rashmi smiling by ocean waves in sunglasses" class="gallery-img" loading="lazy">
+                <div class="gallery-shimmer-sweep" aria-hidden="true"></div>
+              </div>
+              
+              <div class="gallery-overlay">
+                <div class="gallery-caption-content">
+                  <span class="gallery-tag-gu">હાસ્ય ની લહેરો</span>
+                  <h3 class="gallery-title-en">Sun, Waves &amp; Smiles</h3>
+                  <p class="gallery-quote">&ldquo;Sun-kissed smiles and splashing waves — making timeless memories.&rdquo;</p>
+                  <button class="btn-gallery-zoom" type="button" aria-label="View photo in full screen">
+                    <span>View Photo</span> <span aria-hidden="true">🔍</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 5: Walking Hand in Hand into Forever -->
+          <div class="gallery-item gallery-item-full" data-gallery-idx="4" data-img="./assets/images/6.webp" data-title="Walking into Forever" data-title-gu="સંગાથ જીવનભરનો" data-quote="Hand in hand, step by step, along the shores of life towards our sacred tomorrow.">
+            <div class="gallery-card-inner">
+              <div class="gallery-card-ornament ornament-tl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-tr" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-bl" aria-hidden="true"></div>
+              <div class="gallery-card-ornament ornament-br" aria-hidden="true"></div>
+              
+              <div class="gallery-img-container">
+                <img src="./assets/images/6.webp" alt="Trupesh and Rashmi walking hand in hand along beach tide" class="gallery-img" loading="lazy">
+                <div class="gallery-shimmer-sweep" aria-hidden="true"></div>
+              </div>
+              
+              <div class="gallery-overlay">
+                <div class="gallery-caption-content">
+                  <span class="gallery-tag-gu">સંગાથ જીવનભરનો</span>
+                  <h3 class="gallery-title-en">Walking into Forever</h3>
+                  <p class="gallery-quote">&ldquo;Hand in hand, step by step, along the golden shores of life.&rdquo;</p>
+                  <button class="btn-gallery-zoom" type="button" aria-label="View photo in full screen">
+                    <span>View Photo</span> <span aria-hidden="true">🔍</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. CINEMATIC WEDDING DATE REVEAL & COUNTDOWN
+           ==================================================================== -->
+      <section id="date" class="date-section">
+        <div class="section-tag">Auspicious Dates</div>
+        <h2 class="section-heading-royal">Save The Dates</h2>
+        <p class="section-subtext">Mark your calendar for the grand celebration of love and blessings</p>
+
+        <!-- Engraved Plate -->
+        <div class="engraved-date-plate">
+          <div class="date-era-label">વિક્રમ સંવત ૨૦૮૩ &bull; કારતક સુદ પૂનમ થી વદ ત્રીજ</div>
+
+          <div class="date-large-digits">
+            <div class="date-digit-box">
+              <span class="date-digit-num">25</span>
+              <span class="date-digit-th">Nov</span>
+            </div>
+            <div class="date-connector-amp">&amp;</div>
+            <div class="date-digit-box">
+              <span class="date-digit-num">26</span>
+              <span class="date-digit-th">Nov</span>
+            </div>
+          </div>
+
+          <div class="date-month-year">
+            November <span class="date-year-accent">2026</span>
+          </div>
+
+          <p style="font-family:var(--font-serif-classic); font-size:0.95rem; color:var(--silk-subtext); margin-top:12px;">
+            Festivities commence on Tuesday, 24th November 2026 with Manglik Prasang
+          </p>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-wrap">
+          <div class="countdown-heading">Auspicious Moments Countdown</div>
+          <div class="countdown-grid">
+            <div class="countdown-unit-card">
+              <span id="countdown-days" class="countdown-val">00</span>
+              <span class="countdown-lbl">Days</span>
+            </div>
+            <div class="countdown-unit-card">
+              <span id="countdown-hours" class="countdown-val">00</span>
+              <span class="countdown-lbl">Hours</span>
+            </div>
+            <div class="countdown-unit-card">
+              <span id="countdown-mins" class="countdown-val">00</span>
+              <span class="countdown-lbl">Mins</span>
+            </div>
+            <div class="countdown-unit-card">
+              <span id="countdown-secs" class="countdown-val">00</span>
+              <span class="countdown-lbl">Secs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Add to Calendar CTAs -->
+        <div class="calendar-cta-wrap">
+          <button class="btn-luxury-action btn-primary-gold" data-cal-id="all" type="button">
+            <span>Add Celebrations to Calendar</span>
+            <span aria-hidden="true">📅</span>
+          </button>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Trupesh+Weds+Rashmi+-+Wedding+Celebrations&dates=20261124T103000Z/20261126T183000Z&details=Trupesh+Weds+Rashmi+Wedding+Festivities&location=Mira+Road+East,+Maharashtra+401107"
+            target="_blank" rel="noopener noreferrer" class="btn-luxury-action btn-secondary-wine">
+            <span>Google Calendar</span>
+            <span aria-hidden="true">🗓️</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. WEDDING EVENTS TIMELINE (Exact Details from PDF)
+           ==================================================================== -->
+      <section id="events" class="events-section">
+        <div class="section-tag">Sacred Itinerary</div>
+        <h2 class="section-heading-royal">Wedding Events</h2>
+        <p class="section-subtext">Every ceremony holds traditional warmth and joyous memories</p>
+
+        <!-- Day Filter Tabs -->
+        <div class="day-tabs-nav" role="tablist">
+          <button class="day-tab-btn active" data-filter-day="all" type="button">All Events</button>
+          <button class="day-tab-btn" data-filter-day="day1" type="button">24 Nov</button>
+          <button class="day-tab-btn" data-filter-day="day2" type="button">25 Nov</button>
+          <button class="day-tab-btn" data-filter-day="day3" type="button">26 Nov</button>
+        </div>
+
+        <div class="timeline-track">
+
+          <!-- --------------------------------------------------------------
+               DAY 1: 24 NOVEMBER 2026
+               -------------------------------------------------------------- -->
+          <div class="timeline-day-header" data-day="day1">
+            <span class="day-badge-pill">
+              <span>24 November 2026</span>
+              <span>&bull;</span>
+              <span>Tuesday</span>
+            </span>
+            <span class="day-tithi-tag">કારતક સુદ પૂનમ (Kartak Sud Punam)</span>
+          </div>
+
+          <!-- Event 1: Manglik Prasang & Sanjee Na Geet -->
+          <div class="timeline-event-card" data-day="day1">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Manglik Prasang</h3>
+                <div class="event-name-gu">સાંજી ના ગીત (Sanjee Na Geet)</div>
+              </div>
+              <span class="event-time-badge">⏰ 4:00 PM – 7:00 PM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Sud Punam</div>
+            <p class="event-desc">
+              Commencement of auspicious wedding celebrations with traditional Sanjee Na Geet, Gujarati folk wedding melodies, blessings from elders, and joyful musical festivities.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Bapa Sitaram Garden</strong><br>
+                Behind Ayyappa Temple, Opp. Indraprasth Bldg., Poonam Vihar, Mira Road (E) 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="sanjee" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+              <a href="https://www.google.com/maps/search/?api=1&query=Bapa+Sitaram+Garden+Behind+Ayyappa+Temple+Mira+Road+East+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-card-small btn-card-directions">
+                <span>Directions</span> <span>🗺️</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- --------------------------------------------------------------
+               DAY 2: 25 NOVEMBER 2026
+               -------------------------------------------------------------- -->
+          <div class="timeline-day-header" data-day="day2">
+            <span class="day-badge-pill">
+              <span>25 November 2026</span>
+              <span>&bull;</span>
+              <span>Wednesday</span>
+            </span>
+            <span class="day-tithi-tag">કારતક વદ એકમ (Kartak Vad Ekam)</span>
+          </div>
+
+          <!-- Event 2: Mandap Murat -->
+          <div class="timeline-event-card" data-day="day2">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Mandap Murat</h3>
+                <div class="event-name-gu">મંડપ મુહૂર્ત</div>
+              </div>
+              <span class="event-time-badge">⏰ 8:15 AM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Ekam</div>
+            <p class="event-desc">
+              Sacred erection of the holy wedding mandap with Vedic chants, Ganpati pujan, and divine invocations seeking the protection and prosperity of the gods.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Bapa Sitaram Garden</strong><br>
+                Behind Ayyappa Temple, Opp. Indraprasth Bldg., Poonam Vihar, Mira Road (E) 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="mamera" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Event 3: Ruda Mamera -->
+          <div class="timeline-event-card" data-day="day2">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Ruda Mamera</h3>
+                <div class="event-name-gu">રૂડા મામેરા (Mosad Prasang)</div>
+              </div>
+              <span class="event-time-badge">⏰ 11:00 AM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Ekam</div>
+            <p class="event-desc">
+              Heartfelt maternal uncle (Mama Nileshbhai Sondagar) and Mosad Paksh welcome ceremony, presenting auspicious bridal attire, traditional jewelry, and blessings.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Bapa Sitaram Garden</strong><br>
+                Behind Ayyappa Temple, Opp. Indraprasth Bldg., Poonam Vihar, Mira Road (E) 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="mamera" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Event 4: Dandiya Ras -->
+          <div class="timeline-event-card" data-day="day2">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+
+            <!-- Featured Dandiya Art -->
+            <div class="event-featured-art">
+              <img src="./assets/images/dandiya_raas.jpg" alt="Dandiya Raas &amp; Garba Celebration" loading="lazy">
+            </div>
+
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Dandiya Ras</h3>
+                <div class="event-name-gu">દાંડિયા રાસ &bull; ગરબા નાઈટ</div>
+              </div>
+              <span class="event-time-badge">⏰ 7:00 PM – 10:00 PM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Ekam</div>
+            <p class="event-desc">
+              An energetic, colorful evening of Gujarati Garba &amp; Dandiya Raas with family, rhythmic dhol beats, vibrant chaniya cholis and non-stop dancing under festive lights!
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Bapa Sitaram Garden</strong><br>
+                Behind Ayyappa Temple, Opp. Indraprasth Bldg., Poonam Vihar, Mira Road (E) 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="dandiya" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+              <a href="https://www.google.com/maps/search/?api=1&query=Bapa+Sitaram+Garden+Behind+Ayyappa+Temple+Mira+Road+East+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-card-small btn-card-directions">
+                <span>Directions</span> <span>🗺️</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- --------------------------------------------------------------
+               DAY 3: 26 NOVEMBER 2026
+               -------------------------------------------------------------- -->
+          <div class="timeline-day-header" data-day="day3">
+            <span class="day-badge-pill">
+              <span>26 November 2026</span>
+              <span>&bull;</span>
+              <span>Guruvar (Thursday)</span>
+            </span>
+            <span class="day-tithi-tag">કારતક વદ ત્રીજ (Kartak Vad Trij)</span>
+          </div>
+
+          <!-- Event 5: Jan Prasthan -->
+          <div class="timeline-event-card" data-day="day3">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Jan Prasthan</h3>
+                <div class="event-name-gu">જાન પ્રસ્થાન (Baraat)</div>
+              </div>
+              <span class="event-time-badge">⏰ 2:00 PM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Trij</div>
+            <p class="event-desc">
+              The grand departure of the groom’s wedding procession (Jan / Baraat), accompanied by joyful dancing, celebratory music, and blessings from family elders.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Maa Laxmi Garden</strong><br>
+                Near MBMC, near Rassaz Greens, Medetiya Nagar, Mira Road East, 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="wedding" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Event 6: Hastha Melap -->
+          <div class="timeline-event-card" data-day="day3">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Hastha Melap</h3>
+                <div class="event-name-gu">હસ્ત મેળાપ &bull; મંગલ ફેરા</div>
+              </div>
+              <span class="event-time-badge" style="background:rgba(212,175,55,0.25); border-color:var(--gold-foil);">⏰ 4:45 PM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Trij &bull; Auspicious Muhurat</div>
+            <p class="event-desc">
+              The sacred union of Trupesh &amp; Rashmi under the Vedic mandap, uniting hands with holy thread, exchanging vows around the sacred Agni, and Mangal Pheras.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Maa Laxmi Garden</strong><br>
+                Near MBMC, near Rassaz Greens, Medetiya Nagar, Mira Road East, 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="wedding" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+              <a href="https://www.google.com/maps/search/?api=1&query=Maa+Laxmi+Garden+near+MBMC+Mira+Road+East+Mira+Bhayandar+Maharashtra+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-card-small btn-card-directions">
+                <span>Directions</span> <span>🗺️</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 7: Reception -->
+          <div class="timeline-event-card" data-day="day3">
+            <div class="timeline-marker-dot" aria-hidden="true"></div>
+            <div class="event-card-header">
+              <div>
+                <h3 class="event-name-en">Reception</h3>
+                <div class="event-name-gu">શ્રી પ્રીતિભોજન &bull; આશીર્વાદ સમારોહ</div>
+              </div>
+              <span class="event-time-badge">⏰ 8:30 PM</span>
+            </div>
+
+            <div class="event-tithi-line">Kartak Vad Trij</div>
+            <p class="event-desc">
+              An evening of congratulations, gourmet royal feast, musical serenades, photography and showering blessings upon the newly wedded couple Trupesh &amp; Rashmi.
+            </p>
+
+            <div class="event-venue-link">
+              <span>📍</span>
+              <div>
+                <strong>Maa Laxmi Garden</strong><br>
+                Near MBMC, near Rassaz Greens, Medetiya Nagar, Mira Road East, 401107
+              </div>
+            </div>
+
+            <div class="event-actions-row">
+              <button class="btn-card-small btn-card-gold" data-cal-id="wedding" type="button">
+                <span>Add to Calendar</span> <span>📅</span>
+              </button>
+              <a href="https://www.google.com/maps/search/?api=1&query=Maa+Laxmi+Garden+near+MBMC+Mira+Road+East+Mira+Bhayandar+Maharashtra+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-card-small btn-card-directions">
+                <span>Directions</span> <span>🗺️</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           5. FIND US & WEDDING VENUES SECTION
+           ==================================================================== -->
+      <section id="venues" class="venues-section">
+        <div class="section-tag">Locations &amp; Directions</div>
+        <h2 class="section-heading-royal">Find Us</h2>
+        <p class="section-subtext">Both venues are conveniently located in Mira Road East with ample guest parking</p>
+
+        <div class="venues-grid">
+
+          <!-- Venue 1: Bapa Sitaram Garden -->
+          <div class="venue-card">
+            <div class="venue-badge">Venue 1 &bull; 24th &amp; 25th November</div>
+            <h3 class="venue-name">Bapa Sitaram Garden</h3>
+            <p class="venue-address">
+              Behind Ayyappa Temple, Oppo Indraprasth Bldg., Poonam Vihar, Mira Road (E), Mira Bhayandar, Maharashtra 401107
+            </p>
+            <div class="venue-ceremonies-tag">
+              ✨ Sanjee Na Geet &bull; Mandap Murat &bull; Ruda Mamera &bull; Dandiya Ras
+            </div>
+
+            <div class="venue-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Bapa+Sitaram+Garden+Behind+Ayyappa+Temple+Mira+Road+East+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-luxury-action btn-primary-gold" style="font-size:0.85rem; padding:10px 18px;">
+                <span>Open in Google Maps</span> <span>🗺️</span>
+              </a>
+              <button class="btn-luxury-action btn-secondary-wine" data-copy-addr="Bapa Sitaram Garden, Behind Ayyappa Temple, Oppo Indraprasth Bldg., Poonam Vihar, Mira Road (E) 401107"
+                type="button" style="font-size:0.85rem; padding:10px 18px;">
+                <span>Copy Address</span> <span>📋</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Venue 2: Maa Laxmi Garden -->
+          <div class="venue-card">
+            <div class="venue-badge">Venue 2 &bull; 26th November (Wedding Day)</div>
+            <h3 class="venue-name">Maa Laxmi Garden</h3>
+            <p class="venue-address">
+              Maa Laxmi Garden near MBMC, near Rassaz Greens, Medetiya Nagar, Garden and, Mira Road East, Mira Bhayandar, Maharashtra 401107
+            </p>
+            <div class="venue-ceremonies-tag">
+              ✨ Jan Prasthan &bull; Hastha Melap (Pheras) &bull; Grand Reception
+            </div>
+
+            <div class="venue-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Maa+Laxmi+Garden+near+MBMC+Mira+Road+East+Mira+Bhayandar+Maharashtra+401107"
+                target="_blank" rel="noopener noreferrer" class="btn-luxury-action btn-primary-gold" style="font-size:0.85rem; padding:10px 18px;">
+                <span>Open in Google Maps</span> <span>🗺️</span>
+              </a>
+              <button class="btn-luxury-action btn-secondary-wine" data-copy-addr="Maa Laxmi Garden near MBMC, near Rassaz Greens, Medetiya Nagar, Garden and, Mira Road East, Mira Bhayandar, Maharashtra 401107"
+                type="button" style="font-size:0.85rem; padding:10px 18px;">
+                <span>Copy Address</span> <span>📋</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. TRADITIONAL WEDDING LETTER / KANKOTRI (Page 6 of PDF)
+           ==================================================================== -->
+      <section id="kankotri" class="kankotri-section">
+        <div class="section-tag">Aamantran Patrika</div>
+        <h2 class="section-heading-royal">The Wedding Invitation</h2>
+        <p class="section-subtext">The traditional invitation letter as bestowed by the Nandoliya Family</p>
+
+        <!-- Script Toggle -->
+        <div class="kankotri-lang-toggle" role="group" aria-label="Language script toggle">
+          <button class="lang-btn active" data-lang="gu" type="button">ગુજરાતી લિપિ (Original)</button>
+          <button class="lang-btn" data-lang="en" type="button">English Transliteration</button>
+        </div>
+
+        <!-- Royal Parchment Scroll Card -->
+        <div class="kankotri-scroll-card">
+          <!-- Vermilion Royal Wax Seal -->
+          <div class="wax-seal-badge" aria-hidden="true">T&amp;R</div>
+
+          <div class="kankotri-header-symbols">
+            <span>|| શુભ ||</span>
+            <span>| શ્રી ગણેશાય નમઃ |</span>
+            <span>|| લાભ ||</span>
+          </div>
+
+          <div class="kankotri-to-field">
+            <span>To:</span>
+            <span style="flex:1; border-bottom:1px dotted #8c1826; min-height:16px;">
+              <em style="color:#8c1826; font-size:0.95em;">Snehi Swajan / Respected Guest</em>
+            </span>
+          </div>
+
+          <!-- Gujarati Script Content -->
+          <div id="kankotri-gujarati-text" class="kankotri-body-text">
+            <p>
+              સહર્ષ ખુશાલી સાથે જણાવવાનું કે અમારા કુળદેવી <strong>શ્રી ખોડિયાર માતાજી</strong> ની અસીમ કૃપા થી અ.સૌ. દિવ્યાબેન તથા રાજુભાઈ કેશુભાઈ નંદોલીયા ના સુપુત્ર (હાલ મીરા રોડ)
+            </p>
+
+            <div class="kankotri-couple-highlight">
+              <div class="kankotri-couple-title">ત્રુપેશ સંગ રશ્મિ</div>
+              <div style="font-family:var(--font-script-royal); font-size:1.4rem; color:#8c1826;">Trupesh Weds Rashmi</div>
+            </div>
+
+            <p>
+              મરાલ નિવાસી (હાલ મીરા રોડ) અ.સૌ. દિવ્યાબેન તથા દિનેશભાઈ હરિશ્ચંદ્ર પંચાલ ની સુપુત્રી સાથે <strong>વિક્રમ સંવત ૨૦૮૩ કારતક વદ ત્રીજ ને ગુરૂવાર ૨૬/૧૧/૨૦૨૬</strong> ના શુભ દિને નિર્ધારેલ છે.
+            </p>
+
+            <div class="kankotri-tithi-highlight">
+              જાન પ્રસ્થાન: ૨:૦૦ PM &bull; હસ્ત મેળાપ: ૪:૪૫ PM &bull; રિસેપ્શન: ૮:૩૦ PM
+            </div>
+
+            <p class="kankotri-closing-prayer">
+              આ શુભ પ્રસંગે આપશ્રી / આપબંને / સહકુટુંબ આ પવિત્ર વિધિ ના મંગળ અવસરે નવદંપતી ને આશીર્વાદ આપવા માટે મીરા રોડ પધારવા સ્નેહભર્યું આમંત્રણ છે.
+            </p>
+          </div>
+
+          <!-- English Transliteration Content (As printed in the PDF) -->
+          <div id="kankotri-english-text" class="kankotri-body-text" style="display:none; font-family:var(--font-serif-classic); font-size:1.05rem;">
+            <p>
+              Saharsh khushali saathe janavanu ke amara kuldevi <strong>Shri Khodiyar Mataji</strong> ni asim krupa thi aso Divyaben tatha Rajubhai Keshubhai Nandoliya na su putra (hal Mira Road)
+            </p>
+
+            <div class="kankotri-couple-highlight">
+              <div class="kankotri-couple-title">Trupesh Weds Rashmi</div>
+            </div>
+
+            <p>
+              Maral nivasi (hal Mira Road) aso Divyaben tatha Dineshbhai Harishchandra Panchal ni su putri sathe <strong>vikram savant 2083 kartak vad trij ne guruvar 26/11/2026</strong> na subh dine nirdharel che.
+            </p>
+
+            <div class="kankotri-tithi-highlight">
+              Jan Prasthan: 2:00 PM &bull; Hastha Melap: 4:45 PM &bull; Reception: 8:30 PM
+            </div>
+
+            <p class="kankotri-closing-prayer">
+              Aa shubh prasang aa Aapshri / Aapbane / Sahkutumb aa pavitra vidhi na mangala avsare par nav dampati ne aashirwad aapava maate Mira Road padharva sneh bhairu aamantran che.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. FAMILY SECTION (Preserving all 34 names from Pages 5 & 7 of PDF)
+           ==================================================================== -->
+      <section id="family" class="family-section">
+        <div class="section-tag">Kutumb &amp; Snehijan</div>
+        <h2 class="section-heading-royal">The Family</h2>
+        <p class="section-subtext">With warm blessings from the elders, cousins and family members</p>
+
+        <!-- Family Filter Tabs -->
+        <div class="family-tabs-nav" role="tablist">
+          <button class="family-tab-btn active" data-target-pane="pane-darshana" type="button">Darshana Bhilashi</button>
+          <button class="family-tab-btn" data-target-pane="pane-mosad" type="button">Mosad &amp; Relatives</button>
+          <button class="family-tab-btn" data-target-pane="pane-likhitan" type="button">Likhitan Snehadin</button>
+        </div>
+
+        <!-- Tab 1: Darshana Bhilashi -->
+        <div id="pane-darshana" class="family-tab-pane active">
+          <div class="family-group-card">
+            <h3 class="family-group-title">Darshana Bhilashi &bull; દર્શનાભિલાષી</h3>
+            <div class="family-names-two-col">
+              <div class="family-name-item"><span class="honorific">Shri</span> Bhaveshbhai Keshubhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Jatish Bhaveshbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Chetanbhai Dineshbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Khushal Chetanbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Dipakbhai Himatbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Khushi Chetanbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Vimalbhai Himatbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Riddhi Bhaveshbhai Nandoliya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Mosad Paksh, Foi Fuva & Bhanej -->
+        <div id="pane-mosad" class="family-tab-pane">
+          <!-- Mosad Paksh -->
+          <div class="family-group-card">
+            <h3 class="family-group-title">Mosad Paksh &bull; મોસાળ પક્ષ</h3>
+            <div class="family-names-two-col" style="grid-template-columns:1fr;">
+              <div class="family-name-item">
+                <span class="honorific">Shri</span> Nileshbhai Jayantibhai Sondagar (Mama)
+              </div>
+            </div>
+          </div>
+
+          <!-- Foi Fuva -->
+          <div class="family-group-card">
+            <h3 class="family-group-title">Foi Fuva &bull; ફોઈ ફુવા</h3>
+            <div class="family-names-two-col">
+              <div class="family-name-item"><span class="honorific">Shri</span> Dharmashbhai Vithalbhai Kalsara</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Naynaben Dharmashbhai Kalsara</div>
+            </div>
+          </div>
+
+          <!-- Bhanej -->
+          <div class="family-group-card">
+            <h3 class="family-group-title">Bhanej &bull; ભાણેજ</h3>
+            <div class="family-names-two-col">
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Raj Dharmeshbhai Kalsara</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Ravi Dharmeshbhai Kalsara</div>
+              <div class="family-name-item"><span class="honorific">Shri</span> Hitakshi Dharmeshbhai Kalsara</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Likhitan Snehadin (22 elders from Page 7) -->
+        <div id="pane-likhitan" class="family-tab-pane">
+          <div class="family-group-card">
+            <h3 class="family-group-title">Likhitan Snehadin &bull; લિ. સ્નેહાધીન</h3>
+            <p style="text-align:center; font-size:0.85rem; color:var(--silk-subtext); margin-bottom:14px;">
+              With the cherished blessings and love of the Nandoliya Family Elders
+            </p>
+            <div class="family-names-two-col">
+              <!-- Left Column (Elders & Men) -->
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Kanjibhai Ramjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Labhuben Kanjibhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Nanjibhai Ramjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">G Sva.</span> Revatiben Nanjibhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Haribhai Nanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">G Sva.</span> Jayaben Haribhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Keshubhai Kanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Kantaben Keshubhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific" style="color:var(--silk-muted);">Sva.</span> Dineshbhai Kanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">G Sva.</span> Muktaben Dineshbhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Himatbhai Kanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Elaben Himatbhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Hiteshbhai Kanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Sumitaben Hiteshbhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Rajubhai Keshubhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Divyaben Rajubhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Bhaveshbhai Keshubhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Minaben Bhaveshbhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Chetanbhai Dineshbhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">A Sva.</span> Hiralben Chetanbhai Nandoliya</div>
+
+              <div class="family-name-item"><span class="honorific">Shri.</span> Anilbhai Nanjibhai Nandoliya</div>
+              <div class="family-name-item"><span class="honorific">Shri.</span> Ranjitbhai Haribhai Nandoliya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Authentic Tahuko (Poetic Reminder from PDF) -->
+        <div class="tahuko-card">
+          <div class="tahuko-badge">Tahuko &bull; ટહૂકો</div>
+          <p class="tahuko-gujarati-quote">
+            "લગ્નનો પ્રસંગ છે ખાસ, તમારા વગર કેમ આવે મજા?<br>
+            બહાના બધા બાજુ પર રાખજો, લગ્નમાં ચોક્કસ પધારજો! ❤️"
+          </p>
+          <p class="tahuko-meaning">
+            "The wedding occasion is special, how can there be joy without you?<br>
+            Please keep all excuses aside, and grace the wedding in person!"
+          </p>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           8. PARENTS' MESSAGE & FINALE (Page 7 of PDF)
+           ==================================================================== -->
+      <section id="parents" class="parents-message-section">
+        <div class="section-tag">A Heartfelt Note From Parents</div>
+
+        <div class="parents-quote-box">
+          <div class="parents-signature-title">Raju &amp; Divya Nandoliya Say's:</div>
+          <p class="parents-quote-gujarati">
+            નથી કરવું Twitt કે નથી કરવું WhatsApp,<br>
+            નથી કરવો SMS કે નથી કરવો E-mail,<br>
+            <span class="parents-quote-highlight">રહેજો અમારા દીકરા ના લગન માં Face to Face! ❤️</span>
+          </p>
+          <p class="parents-quote-english">
+            "No tweets and no WhatsApp messages,<br>
+            No text SMS and no emails needed,<br>
+            Be there with us in person, face-to-face, for our son's wedding celebrations!"
+          </p>
+        </div>
+
+        <!-- Grand Finale Couple Banner -->
+        <div class="finale-banner">
+          <div class="finale-couple-circle">
+            <div class="finale-circle-halo" aria-hidden="true"></div>
+            <img src="./assets/images/12.webp" alt="Trupesh &amp; Rashmi" class="finale-couple-thumb" loading="lazy">
+          </div>
+          <div class="monogram-badge" style="font-size:1.8rem; margin-bottom:8px;">
+            <span>T</span><span class="ampersand">&amp;</span><span>R</span>
+          </div>
+          <h2 class="finale-names">Trupesh Weds Rashmi</h2>
+          <p style="font-family:var(--font-serif-classic); font-size:1.15rem; color:var(--silk-subtext); margin-top:6px;">
+            25th &amp; 26th November 2026 &bull; Mira Road East
+          </p>
+
+          <button id="btn-celebrate-shower" class="btn-celebrate-shower" type="button">
+            <span>Shower Blessings</span>
+            <span aria-hidden="true">🌸🎉</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           10. GUEST BLESSINGS & WISHES GUESTBOOK
+           ==================================================================== -->
+      <section id="wishes" class="wishes-section">
+        <div class="section-tag">Shower Your Love</div>
+        <h2 class="section-heading-royal">Guest Blessings</h2>
+        <p class="section-subtext">Send your warmest wishes and prayers to Trupesh &amp; Rashmi</p>
+
+        <div class="wishes-card">
+          <form id="wishes-form" class="wishes-form">
+            <div class="form-group">
+              <label for="wish-sender-name" class="form-label">Your Name / Family Name</label>
+              <input type="text" id="wish-sender-name" class="form-input" placeholder="e.g. Ramesh &amp; Meena Patel" required>
+            </div>
+
+            <div class="form-group">
+              <label for="wish-message" class="form-label">Your Blessing Message</label>
+              <textarea id="wish-message" class="form-textarea" rows="3" placeholder="Write your heartfelt blessing..." required></textarea>
+              <div class="wishes-quick-tags">
+                <button type="button" class="quick-tag-btn" data-tag-text="ખૂબ ખૂબ અભિનંદન! સદા સુખી રહો! 🌸">ખૂબ ખૂબ અભિનંદન!</button>
+                <button type="button" class="quick-tag-btn" data-tag-text="Wishing Trupesh &amp; Rashmi a lifetime of immense joy, good health &amp; love! ❤️">Joy &amp; Love</button>
+                <button type="button" class="quick-tag-btn" data-tag-text="Congratulations to Nandoliya &amp; Panchal families! ✨">Mubarakbaad</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-send-blessing">
+              <span>Send Blessings to Couple</span>
+              <span aria-hidden="true">💌</span>
+            </button>
+          </form>
+
+          <!-- Realtime Guestbook Feed -->
+          <div id="wishes-feed-list" class="wishes-feed-list" role="region" aria-live="polite">
+            <!-- Dynamically populated from scripts/main.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           11. FOOTER
+           ==================================================================== -->
+      <footer class="site-footer">
+        <img src="./assets/images/tjsmDC8g305SmMs98B3ABqR5QE.png" alt="Ganesha" class="footer-ganesha-mini">
+        <p class="footer-quote">"May Lord Ganesha bless the new journey of Trupesh &amp; Rashmi"</p>
+        <p>&copy; 2026 Nandoliya Family &bull; Mira Road East &bull; All Auspicious Blessings</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       FLOATING BOTTOM NAVIGATION DOCK (Mobile & Desktop)
+       ======================================================================== -->
+  <nav class="bottom-nav-dock" aria-label="Bottom Quick Navigation">
+    <a href="#hero" class="nav-dock-item active">
+      <span class="nav-dock-icon" aria-hidden="true">🌸</span>
+      <span>Home</span>
+    </a>
+    <a href="#gallery" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">📸</span>
+      <span>Moments</span>
+    </a>
+    <a href="#events" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">📅</span>
+      <span>Events</span>
+    </a>
+    <a href="#venues" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">📍</span>
+      <span>Venues</span>
+    </a>
+    <a href="#kankotri" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">💌</span>
+      <span>Kankotri</span>
+    </a>
+    <a href="#family" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">👥</span>
+      <span>Family</span>
+    </a>
+    <a href="#wishes" class="nav-dock-item">
+      <span class="nav-dock-icon" aria-hidden="true">🎁</span>
+      <span>Wishes</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================================
+       LUXURY PHOTO LIGHTBOX MODAL
+       ======================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-dialog">
+      <button id="lightbox-close-btn" class="lightbox-close-btn" type="button" aria-label="Close photo view">✕</button>
+      
+      <div class="lightbox-card">
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-img" src="./assets/images/12.webp" alt="Couple Photo" class="lightbox-image">
+          <div class="lightbox-card-frame-gold" aria-hidden="true"></div>
+        </div>
+        
+        <div class="lightbox-details">
+          <div class="lightbox-header-row">
+            <span id="lightbox-tag-gu" class="lightbox-tag-gu">પ્રેમ અને વિશ્વાસ</span>
+            <span id="lightbox-counter" class="lightbox-counter">1 of 5</span>
+          </div>
+          <h3 id="lightbox-title" class="lightbox-title">A Sacred Promise</h3>
+          <p id="lightbox-quote" class="lightbox-quote">&ldquo;In your eyes, I found my home; in your heart, I found my forever.&rdquo;</p>
+        </div>
+      </div>
+      
+      <!-- Nav Arrows -->
+      <button id="lightbox-prev-btn" class="lightbox-nav-btn btn-prev" type="button" aria-label="Previous photo">
+        <span aria-hidden="true">&#10094;</span>
+      </button>
+      <button id="lightbox-next-btn" class="lightbox-nav-btn btn-next" type="button" aria-label="Next photo">
+        <span aria-hidden="true">&#10095;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Feedback Toast -->
+  <div id="toast-notice" class="toast-notice" role="status">
+    <span aria-hidden="true">✨</span>
+    <span class="toast-text">Action completed</span>
+  </div>
+
+</body>
+</html>
